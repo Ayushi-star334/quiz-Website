@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mathematics Quiz - JEE Mains Quiz Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Mathematics Quiz</h1>
+            <nav>
+                <a href="sections.html">Back to Sections</a>
+               
+            </nav>
+        </header>
+        <main>
+            <div id="questionsContainer"></div>
+            <button onclick="submitQuiz('math')">Submit Quiz</button>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+    <script>
+        // Load math questions when the page loads
+        loadQuestions('math');
+    </script>
+</body>
+</html>

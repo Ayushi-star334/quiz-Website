@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Quiz Results</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: linear-gradient(rgb(253, 175, 188), rgb(250, 169, 17), rgb(253, 175, 188));
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin: 0;
+            padding: 20px;
+        }
+
+        h1 {
+            color: #333;
+        }
+
+        .score {
+            font-size: 1.2em;
+            margin-bottom: 20px;
+            color: #4a90e2;
+        }
+
+        .results {
+            width: 80%;
+            max-width: 600px;
+            background-color: wheat;
+            padding: 15px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        .question {
+            font-weight: bold;
+            margin-top: 10px;
+        }
+
+        .answer {
+            margin: 5px 0;
+        }
+
+        .correct {
+            color: green;
+        }
+
+        .incorrect {
+            color: red;
+        }
+    </style>
+</head>
+<body>
+    <h1>Quiz Results</h1>
+    <div class="score" id="score"></div>
+    <div class="results" id="resultsContainer"></div>
+
+    <script>
+        function displayResults(score, total, feedback) {
+            // Display score
+            document.getElementById('score').innerText = `You scored ${score} out of ${total}`;
+
+            // Display feedback for each question
+            const resultsContainer = document.getElementById('resultsContainer');
+            feedback.forEach((item, index) => {
+                const resultElement = document.createElement('div');
+                resultElement.innerHTML = `
+                    <p class="question">Q${index + 1}: ${item.question}</p>
+                    <p class="answer">Your answer: <span class="${item.isCorrect ? 'correct' : 'incorrect'}">${item.selectedAnswer}</span></p>
+                    <p class="answer">Correct answer: <span class="correct">${item.correctAnswer}</span></p>
+                `;
+                resultsContainer.appendChild(resultElement);
+            });
+        }
+
+        // Call displayResults with sample data when page loads
+        // Note: Replace this sample data with actual quiz data passed through URL parameters or inline script
+        window.onload = () => {
+            const score = 2; // example score
+            const total = 4; // example total questions
+            const feedback = [
+                { question: "What is the value of π (Pi)?", selectedAnswer: "3.14", correctAnswer: "All of the above", isCorrect: false },
+                { question: "What is the derivative of x²?", selectedAnswer: "2x", correctAnswer: "2x", isCorrect: true },
+                { question: "What is the speed of light?", selectedAnswer: "3.00 x 10^8 m/s", correctAnswer: "3.00 x 10^8 m/s", isCorrect: true },
+                { question: "What is the unit of force?", selectedAnswer: "Joule", correctAnswer: "Newton", isCorrect: false }
+            ];
+            displayResults(score, total, feedback);
+        };
+    </script>
+
+<img 
+src="https://th.bing.com/th/id/R.0db03bfec8156217e0a9422b628a715f?rik=YI8oNmSTKjfsxA&riu=http%3a%2f%2fkittybucholtz.com%2fwp-content%2fuploads%2f2016%2f02%2fSmile-thumbs-up.jpg&ehk=Ssgojxlf97%2fAswaD046MlwC348FZSlOtkEy6mDg%2beTc%3d&risl=1&pid=ImgRaw&r=0"
+alt="good"
+width="100"
+height="100"
+align="right"
+>
+</body>
+</html>
+
+
+
+
+    
+   
+

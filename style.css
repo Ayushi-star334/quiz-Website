@@ -1,0 +1,122 @@
+body {
+    margin: 0;
+    font-family: 'Arial', sans-serif;
+    background: linear-gradient(rgb(253, 175, 188), rgb(250, 169, 17), rgb(253, 175, 188));
+    color: wheat;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+
+.container {
+    text-align: center;
+    background: rgba(0, 0, 0, 0.8);
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgb(119, 5, 5);
+    animation: fadeIn 1.5s ease;
+}
+#box{
+    text-align: center;
+    background: bisque;
+    padding: 40px;
+    border-radius: 10px;
+    box-shadow: 0 4px 20px rgb(159, 108, 46);
+    animation: fadeIn 1.5s ease;
+}
+#alag{
+    color:rgb(14, 12, 12);
+}
+
+header {
+    margin-bottom: 20px;
+}
+
+h1 {
+    animation: bounce 3s infinite;
+}
+
+nav {
+    margin: 20px ;
+}
+
+ nav a {
+    margin: 0 15px;
+    padding: 10px 20px;
+    background-color: rgb(242, 108, 130);
+    border: none;
+    border-radius: 5px;
+    text-decoration: none;
+    color: white;
+    transition: background 0.4s ease, transform 0.4s ease;
+}
+
+nav a:hover {
+    background-color: rgb(212, 16, 49) ;
+    transform: scale(1.05);
+}
+
+main {
+    font-size: 1.2em;
+}
+
+.button {
+    padding: 15px 30px;
+    background-color: #6a1b9a;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    color: white;
+    font-size: 1.1em;
+}
+
+.button:hover {
+    transform: scale(6);
+    background-color: #5e35b1;
+}
+
+.subject {
+    display: inline-block;
+    margin: 20px;
+    padding: 20px 30px;
+    background-color: rgb(228, 152, 11);
+    border: none;
+    border-radius: 18px;
+    color: black;
+    font-size: 1.2em;
+    transition: background 0.3s, transform 0.3s;
+}
+
+.subject:hover {
+    background-color: rgb(150, 100, 8);
+    transform: scale(1.05);
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+@keyframes bounce {
+    0%, 20%, 50%, 80%, 100% {
+        transform: translateY(0);
+    }
+    40% {
+        transform: translateY(-20px);
+    }
+    60% {
+        transform: translateY(-10px);
+    }
+}
+
+
+
+
+
+
+
+
+
+

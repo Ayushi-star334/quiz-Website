@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login - JEE Mains Quiz Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Login</h1>
+            <nav>
+                <a href="signup.html">Sign Up</a>
+                <a href="index.html">Home</a>
+            </nav>
+        </header>
+        <main>
+            <form id="loginForm" onsubmit="return handleLogin(event)">
+                <div>
+                    <label for="username">Username:</label>
+                    <input type="text" id="username" >
+                </div>
+                <div>
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" >
+                </div>
+                <button type="submit">Login</button>
+            </form>
+        </main>
+    </div>
+
+    <script>
+        function handleLogin(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input
+             username = document.getElementById('username').value;
+             password = document.getElementById('password').value;
+
+            // Simple validation (for demonstration purposes)
+            if (username === "admin"||"host" && password === "admin123"||"host123") {
+                // Redirect to sections page on successful login
+                window.location.href = "sections.html";
+            } else {
+                alert("Invalid username or password. Please try again.");
+            }
+        }
+    </script>
+</body>
+</html>
+

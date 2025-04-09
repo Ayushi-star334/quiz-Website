@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Sign Up - JEE Mains Quiz Test</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Sign Up</h1>
+            <nav>
+                <a href="login.html">Login</a>
+                <a href="index.html">Home</a>
+            </nav>
+        </header>
+        <main>
+            <form id="signupForm" onsubmit="return handleSignUp(event)">
+                <div>
+                    <label for="newUsername">Username:</label>
+                    <input type="text" id="newUsername" >
+                </div>
+                <div>
+                    <label for="newPassword">Password:</label>
+                    <input type="password" id="newPassword" >
+                </div>
+                <div>
+                    <label for="confirmPassword">Confirm Password:</label>
+                    <input type="password" id="confirmPassword">
+                </div>
+                <button type="submit">Sign Up</button>
+            </form>
+            <p>Already have an account? <a href="login.html">Login here</a></p>
+        </main>
+    </div>
+
+    <script>
+        function handleSignUp(event) {
+            event.preventDefault(); // Prevent form submission
+
+            // Get user input
+             newUsername = document.getElementById('newUsername').value;
+             newPassword = document.getElementById('newPassword').value;
+             confirmPassword = document.getElementById('confirmPassword').value;
+
+            // Basic password match validation
+            if (newPassword !== confirmPassword) {
+                alert("Passwords do not match. Please try again.");
+                return;
+            }
+
+            // Redirect to login page on successful sign-up
+            alert("Signup successfully! Please login.");
+            window.location.href = "login.html";
+        }
+    </script>
+</body>
+</html>
+
